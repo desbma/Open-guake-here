@@ -52,8 +52,9 @@ class OpenTerminalGeometry(GObject.GObject, Nautilus.MenuProvider):
         curr_dir = urllib.unquote(uri_raw[7:])
         if os.path.isfile(curr_dir):
             curr_dir = os.path.dirname(curr_dir)
-        bash_string = "guake -t -n '" + curr_dir + "'"
-        subprocess.call(bash_string, shell=True)
+        tabname = os.path.basename(curr_dir)
+        cmd = ("guake", "-n", curr_dir, "-r", tabname)
+        subprocess.call(cmd)
 
     def get_file_items(self, window, sel_items):
         """
