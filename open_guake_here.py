@@ -49,7 +49,12 @@ class OpenTerminalGeometry(GObject.GObject, Nautilus.MenuProvider):
         uri_raw = selected.get_uri()
         if len(uri_raw) < 7:
             return
-        curr_dir = urllib.unquote(uri_raw[7:])
+        if uri_raw == "x-nautilus-desktop:///":
+            curr_dir = os.path.expanduser("~/Desktop")
+        elif uri_raw.startswith("trash:"):
+            uri_raw.replace("trash:", os.path.expanduser("~/.Thrash", 1))
+        else:
+            curr_dir = urllib.unquote(uri_raw[7:])
         if os.path.isfile(curr_dir):
             curr_dir = os.path.dirname(curr_dir)
         tabname = os.path.basename(curr_dir)
