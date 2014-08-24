@@ -55,6 +55,7 @@ class OpenTerminalGeometry(GObject.GObject, Nautilus.MenuProvider):
         tabname = os.path.basename(curr_dir)
         cmd = ("guake", "-n", curr_dir, "-r", tabname)
         subprocess.call(cmd)
+        subprocess.call(("guake", "-t"))
 
     def get_file_items(self, window, sel_items):
         """
