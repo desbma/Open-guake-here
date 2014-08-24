@@ -64,9 +64,9 @@ class OpenTerminalGeometry(GObject.GObject, Nautilus.MenuProvider):
         if len(sel_items) != 1 or sel_items[0].get_uri_scheme() != 'file':
             return
         item = Nautilus.MenuItem(name='NautilusPython::guake',
-                                 label=_('Open Guake Here'),
-                                 tip=_("""Open the Guake terminal on the
-                                          Current/Selected Directory"""),
+                                 label=_("Open a Guake terminal here"),
+                                 tip=_("""Open a Guake terminal in the selected
+                                          directory"""),
                                  icon='terminal')
         item.connect('activate', self.run, sel_items[0])
         return [item]
@@ -78,9 +78,9 @@ class OpenTerminalGeometry(GObject.GObject, Nautilus.MenuProvider):
         current directory.
         """
         item = Nautilus.MenuItem(name='NautilusPython::guake',
-                                 label=_('Open Guake Here'),
-                                 tip=_("""Open the Guake terminal on the
-                                          Current Directory"""),
+                                 label=_("Open a Guake terminal here"),
+                                 tip=_("""Open a Guake terminal in the current
+                                          directory"""),
                                  icon='terminal')
         item.connect('activate', self.run, current_directory)
         return [item]
