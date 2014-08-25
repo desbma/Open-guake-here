@@ -21,6 +21,7 @@ On Ubuntu:
     mkdir -p ~/.local/share/nautilus-python/extensions
     curl -L https://raw.githubusercontent.com/desbma/Open-guake-here/master/open-guake-terminal.py > ~/.local/share/nautilus-python/extensions/open-guake-terminal.py
     chmod +x ~/.local/share/nautilus-python/extensions/open-guake-terminal.py
+    nautilus -q
 
 
 ### If Nautilus is not in English language
