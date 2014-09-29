@@ -23,7 +23,6 @@ On Ubuntu:
     chmod +x ~/.local/share/nautilus-python/extensions/open-guake-terminal.py
     nautilus -q
 
-
 ### If Nautilus is not in English language
 
 In this case you may need to replace `~/Desktop` in the script by the name of your Desktop directory (for example in French it's `~/Bureau`).
